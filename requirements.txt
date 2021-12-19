@@ -4,4 +4,4 @@ timm
 scipy
 sklearn
 einops
-tensorflow==1.15.0
+tensorflow==2.5.2
