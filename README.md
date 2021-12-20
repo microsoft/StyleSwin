@@ -6,7 +6,7 @@ This repo is the official implementation of "[StyleSwin: Transformer-based GAN f
 
 By [Bowen Zhang](http://home.ustc.edu.cn/~zhangbowen), [Shuyang Gu](http://home.ustc.edu.cn/~gsy777/), [Bo Zhang](https://bo-zhang.me/), [Jianmin Bao](https://jianminbao.github.io/), [Dong Chen](http://www.dongchen.pro/), [Fang Wen](https://www.microsoft.com/en-us/research/people/fangwen/), [Yong Wang](https://auto.ustc.edu.cn/2021/0510/c25976a484888/page.htm) and [Baining Guo](microsoft.com/en-us/research/people/bainguo/).
 
-Code and pretrained models will be released soon. Please stay tuned.
+**Code and pretrained models will be released soon. Please stay tuned.**
 
 ## Abstract
 
@@ -40,7 +40,7 @@ Latent code interpolation examples of FFHQ-1024 between the left-most and the ri
 
 ## Maintenance
 
-This project is currently maintained by Bowen Zhang. If you have any questions, feel free to contact [zhangbowen@mail.ustc.edu.cn](zhangbowen@mail.ustc.edu.cn) or [zhanbo@microsoft.com](zhanbo@microsoft.com).
+This is the codebase for our research work. Please open a GitHub issue for any help. If you have any questions regarding the technical details, feel free to contact [zhangbowen@mail.ustc.edu.cn](zhangbowen@mail.ustc.edu.cn) or [zhanbo@microsoft.com](zhanbo@microsoft.com).
 
 
 ## License
