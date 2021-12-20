@@ -21,7 +21,7 @@ Code and pretrained models will be availiable soon.
 | FFHQ | 256x256 | 2.81 | - |
 | LSUN Church | 256x256 | 3.10 | - |
 | CelebA-HQ | 256x256 | 3.25 | - |
-| FFHQ | 1024x1024 | 5.09 | - |
+| FFHQ | 1024x1024 | 5.07 | - |
 | CelebA-HQ | 1024x1024 | 4.43 | - |
 
 ### Qualitative Results
