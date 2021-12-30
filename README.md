@@ -111,7 +111,7 @@ To train a new model of **LSUN Church 256** from scratch:
 python -m torch.distributed.launch --nproc_per_node=8 train_styleswin.py --batch 4 --path /path_to_lsun_church_256 --checkpoint_path /tmp --sample_path /tmp --size 256 --G_channel_multiplier 2 --use_flip --r1 5 --lmdb --D_lr 0.0002 --D_sn --ttur --eval_gt_path /path_to_lsun_church_real_images_50k --lr_decay --lr_decay_start_steps 1300000 --iter 1500000
 ```
 
-**Notice**: When training on 16 GB GPUs, you could add `--use_checkpoint` to save GPU memory.
+**Notice**: When training on 16 GB GPUs, you could add `--use_checkpoint` to save GPU memory. Besides, we evaluate the fid score every 25000 steps and select the model with the best fid score during training.
 
 ## Qualitative Results
 
