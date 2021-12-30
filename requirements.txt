@@ -1,0 +1,9 @@
+torch>=1.6.0
+lmdb
+timm
+scipy
+sklearn
+einops
+tensorflow==1.15.0
+tqdm
+wandb
