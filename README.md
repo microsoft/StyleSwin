@@ -5,6 +5,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/styleswin-transformer-based-gan-for-high-1/image-generation-on-ffhq-256-x-256)](https://paperswithcode.com/sota/image-generation-on-ffhq-256-x-256?p=styleswin-transformer-based-gan-for-high-1)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/styleswin-transformer-based-gan-for-high-1/image-generation-on-lsun-churches-256-x-256)](https://paperswithcode.com/sota/image-generation-on-lsun-churches-256-x-256?p=styleswin-transformer-based-gan-for-high-1)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/styleswin-transformer-based-gan-for-high-1/image-generation-on-ffhq)](https://paperswithcode.com/sota/image-generation-on-ffhq?p=styleswin-transformer-based-gan-for-high-1)
+[![WebDemo](https://img.shields.io/badge/%F0%9F%A4%97%20Web%20Demo-Huggingface-blue)](https://huggingface.co/spaces/hysts/StyleSwin)
 
 ![Teaser](imgs/teaser.png)
 
@@ -33,9 +34,6 @@ To install the dependencies:
 ```bash
 python -m pip install -r requirements.txt
 ```
-## Web Demo
-
-Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/hysts/StyleSwin)
 
 ## Generating image samples with pretrained model
 
@@ -112,7 +110,7 @@ To train a new model of **LSUN Church 256** from scratch:
 python -m torch.distributed.launch --nproc_per_node=8 train_styleswin.py --batch 4 --path /path_to_lsun_church_256 --checkpoint_path /tmp --sample_path /tmp --size 256 --G_channel_multiplier 2 --use_flip --r1 5 --lmdb --D_lr 0.0002 --D_sn --ttur --eval_gt_path /path_to_lsun_church_real_images_50k --lr_decay --lr_decay_start_steps 1300000 --iter 1500000
 ```
 
-**Notice**: When training on 16 GB GPUs, you could add `--use_checkpoint` to save GPU memory. Besides, we evaluate the fid score every 25000 steps and select the model with the best fid score during training.
+**Notice**: When training on 16 GB GPUs, you could add `--use_checkpoint` to save GPU memory.
 
 ## Qualitative Results
 
