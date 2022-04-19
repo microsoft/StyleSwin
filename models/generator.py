@@ -46,7 +46,7 @@ class ToRGB(nn.Module):
             w_shape = (1, 1, 4, 4)
             kernel_ops = torch.zeros(w_shape[2:]).numel()  # Kw x Kh
             # N x Cout x H x W x  (Cin x Kw x Kh + bias)
-            flops = 1 * 3 * self.resolution * self.resolution * (3 * kernel_ops)
+            flops = 1 * 3 * (2 * self.resolution + 3) * (2 *self.resolution + 3) * (3 * kernel_ops)
         return flops
 
 
@@ -353,7 +353,8 @@ class StyleSwinTransformerBlock(nn.Module):
         flops += 2 * (H * W) * self.dim
         # W-MSA/SW-MSA
         nW = H * W / self.window_size / self.window_size
-        flops += nW * self.attn.flops(self.window_size * self.window_size)
+        for attn in self.attn:
+            flops += nW * (attn.flops(self.window_size * self.window_size))
         # mlp
         flops += 2 * H * W * self.dim * self.dim * self.mlp_ratio
         # norm2
@@ -478,9 +479,11 @@ class BilinearUpsample(nn.Module):
     def flops(self):
         H, W = self.input_resolution
         # LN
-        flops = H * W * self.dim
+        flops = 4 * H * W * self.dim
         # proj
-        flops += H * W * self.dim * (self.out_dim)
+        flops += 4 * H * W * self.dim * (self.out_dim)
+        # SPE
+        flops += 4 * H * W * 2
         # bilinear
         flops += 4 * self.input_resolution[0] * self.input_resolution[1] * self.dim * 5
         return flops
